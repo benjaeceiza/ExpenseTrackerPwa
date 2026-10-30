@@ -8,15 +8,13 @@ import SettingsScreen from "../pages/SettingsScreen";
 const AppRouter = () => {
     return (
         <Routes>
-            {/* Rutas con barra de navegación inferior (MainLayout) */}
+            {/* Layout persistente con Bottom Navigation Bar */}
             <Route element={<MainLayout />}>
                 <Route path="/" element={<HomeScreen />} />
                 <Route path="/expenses" element={<ExpensesScreen />} />
-                <Route path="/settings" element={<SettingsScreen />} />
                 <Route path="/expenses/:id" element={<ExpenseDetailScreen />} />
+                <Route path="/settings" element={<SettingsScreen />} />
             </Route>
-
-            {/* Pantalla de detalle de gasto */}
         </Routes>
     );
 };

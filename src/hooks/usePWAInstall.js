@@ -9,20 +9,12 @@ export const usePWAInstall = () => {
             window.navigator.standalone === true
         );
     });
-    const [isIOS, setIsIOS] = useState(() => {
+    const [isIOS] = useState(() => {
         if (typeof window === "undefined") return false;
         return /iphone|ipad|ipod/i.test(window.navigator.userAgent);
     });
 
     useEffect(() => {
-        const checkStandalone =
-            window.matchMedia("(display-mode: standalone)").matches ||
-            window.navigator.standalone === true;
-        setIsInstalled(checkStandalone);
-
-        const iosDevice = /iphone|ipad|ipod/i.test(window.navigator.userAgent);
-        setIsIOS(iosDevice);
-
         const handleBeforeInstallPrompt = (e) => {
             e.preventDefault();
             setDeferredPrompt(e);
