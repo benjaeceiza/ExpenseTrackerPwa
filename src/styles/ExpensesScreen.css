@@ -1,0 +1,58 @@
+.expenses-main-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 100%;
+    background-color: #F4F6F8;
+}
+
+.expenses-header-container {
+    background-color: #10B981;
+    padding: 20px;
+    padding-top: calc(20px + env(safe-area-inset-top, 0px));
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.expenses-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.expenses-add-button {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.expenses-add-button:active {
+    opacity: 0.75;
+    transform: scale(0.95);
+}
+
+.expenses-add-button-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #10B981;
+    line-height: 1;
+    margin-top: -2px;
+}
+
+.expenses-list-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    padding-bottom: 40px;
+    overflow-y: auto;
+    flex: 1;
+}
