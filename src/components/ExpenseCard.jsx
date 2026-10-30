@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { IoChevronForward } from "react-icons/io5";
+import CategoryBadge from "./CategoryBadge";
 import "../styles/ExpenseCard.css";
 
 const ExpenseCard = ({ expense }) => {
@@ -14,7 +15,7 @@ const ExpenseCard = ({ expense }) => {
                     </div>
                 </div>
 
-                <span className="expense-category">{expense.categoria}</span>
+                <CategoryBadge categoria={expense.categoria} />
                 <p className="expense-description">{expense.descripcion}</p>
             </article>
         </Link>

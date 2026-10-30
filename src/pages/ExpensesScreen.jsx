@@ -21,11 +21,13 @@ const ExpensesScreen = () => {
                 </button>
             </header>
 
-            <div className="expenses-list-container">
+            <ul className="expenses-list-container">
                 {expenses.map((expense) => (
-                    <ExpenseCard key={expense.id} expense={expense} />
+                    <li key={expense.id} className="expenses-list-item">
+                        <ExpenseCard expense={expense} />
+                    </li>
                 ))}
-            </div>
+            </ul>
 
             <NewExpenseModal
                 isOpen={isModalOpen}

@@ -13,10 +13,10 @@ const AppRouter = () => {
                 <Route path="/" element={<HomeScreen />} />
                 <Route path="/expenses" element={<ExpensesScreen />} />
                 <Route path="/settings" element={<SettingsScreen />} />
+                <Route path="/expenses/:id" element={<ExpenseDetailScreen />} />
             </Route>
 
-            {/* Pantalla de detalle de gasto (usa useParams y navigate(-1)) */}
-            <Route path="/expenses/:id" element={<ExpenseDetailScreen />} />
+            {/* Pantalla de detalle de gasto */}
         </Routes>
     );
 };

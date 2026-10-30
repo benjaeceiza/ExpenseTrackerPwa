@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { IoArrowBack } from "react-icons/io5";
 import { expenses } from "../data/mockExpenses";
+import CategoryBadge from "../components/CategoryBadge";
 import "../styles/ExpenseDetailScreen.css";
 
 const ExpenseDetailScreen = () => {
@@ -26,7 +27,7 @@ const ExpenseDetailScreen = () => {
             <main className="detail-body">
                 {expense ? (
                     <section className="detail-card">
-                        <span className="detail-category-badge">{expense.categoria}</span>
+                        <CategoryBadge categoria={expense.categoria} />
                         <h2 className="detail-name">{expense.nombre}</h2>
                         <p className="detail-amount">${expense.monto}</p>
 
@@ -38,8 +39,18 @@ const ExpenseDetailScreen = () => {
                         </div>
 
                         <div className="detail-info-group">
-                            <span className="detail-label">ID de registro</span>
-                            <p className="detail-description">#{expense.id}</p>
+                            <span className="detail-label">Categoría</span>
+                            <p className="detail-description">{expense.categoria}</p>
+                        </div>
+
+                        <div className="detail-info-group">
+                            <span className="detail-label">Fecha</span>
+                            <p className="detail-description">{expense.fecha}</p>
+                        </div>
+
+                        <div className="detail-info-group">
+                            <span className="detail-label">Notas</span>
+                            <p className="detail-description">{expense.notas}</p>
                         </div>
 
                         <button
@@ -52,7 +63,10 @@ const ExpenseDetailScreen = () => {
                     </section>
                 ) : (
                     <section className="detail-card">
-                        <p className="detail-description">No se encontró el gasto solicitado.</p>
+                        <h2 className="detail-name">Gasto no encontrado</h2>
+                        <p className="detail-description">
+                            No existe ningún gasto registrado con el ID #{id}.
+                        </p>
                         <button
                             type="button"
                             className="detail-back-btn"
